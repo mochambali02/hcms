@@ -104,6 +104,11 @@
             </v-table>
           </v-container>
         </v-row>
+        <v-row>
+          <v-container style="width: fit-content; margin-right: 0px; padding: 0px auto;">
+            <v-pagination v-model="page" :length="15" :total-visible="7" />
+          </v-container>
+        </v-row>
       </v-container>
     </v-row>
   </v-container>
@@ -112,6 +117,7 @@
 <script>
   export default {
     data: () => ({
+      page: 1,
       dataLSK: [
         {
           nomorDataLSK: 1,
