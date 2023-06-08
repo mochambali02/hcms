@@ -1,0 +1,33 @@
+#Frontend
+npm create vuetify
+	 Project name: frontend-hcms
+	 Base (Vuetify, VueRouter)
+	 Use TypeScript >> No
+	 npm
+
+cd frontend-hcms
+npm install --force
+npm run dev
+
+#Backend (not yet)
+composer create-project laravel/laravel backend-hcms
+cd backend-hcms
+php artisan make:model Employee -m
+php artisan migrate:fresh
+php artisan make:controller Api/v1/EmployeeController
+php artisan route:list
+php artisan make:request StoreEmployeeRequest
+php artisan make:resource v1/EmployeeResource
+php artisan make:resource v1/EmployeeCollection
+
+#Github
+git config --global user.name "mochambali02"
+git config --global user.email "ilhamhambali393@gmail.com"
+git init
+git add backend-hcms/
+git add frontend-hcms/
+git add script.txt
+git commit -m 'first commit'
+git branch -M main
+git remote add origin http://github.com/mochambali02/hcms.git
+git push -u origin main
