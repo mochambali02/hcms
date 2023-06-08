@@ -1,21 +1,30 @@
 // Composables
 import { createRouter, createWebHistory } from 'vue-router'
 
+// Defaults
+import AdminDefault from '@/layouts/default/admin/AdminDefault.vue'
+
+// Views
+import Dashboard from '@/views/admin/DashboardView.vue'
+import LembagaSertifikasiKompetensi from '@/views/admin/LembagaSertifikasiKompetensiView.vue'
+
 const routes = [
   {
-    path: '/',
-    component: () => import('@/layouts/default/Default.vue'),
+    path: '/admin',
+    component: AdminDefault,
     children: [
       {
-        path: '',
-        name: 'Home',
-        // route level code-splitting
-        // this generates a separate chunk (about.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
-        component: () => import(/* webpackChunkName: "home" */ '@/views/Home.vue'),
+        path: 'dashboard',
+        name: 'Dashboard',
+        component: Dashboard
       },
-    ],
-  },
+      {
+        path: 'lembaga_sertifikasi_kompetensi',
+        name: 'Lembaga Sertifikasi Kompetensi',
+        component: LembagaSertifikasiKompetensi
+      }
+    ]
+  }
 ]
 
 const router = createRouter({
